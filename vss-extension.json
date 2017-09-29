@@ -1,0 +1,58 @@
+{
+    "manifestVersion": 1,
+    "id": "RS.VSTS.RunWebTests",
+    "version": "0.1.0",
+    "name": "Run Web Tests",
+    "publisher": "ricardoserradas",
+    "description": "Run Web Tests stored in your source control.",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services.Cloud"
+        },
+        {
+            "id": "Microsoft.TeamFoundation.Server",
+            "version": "[14.3)"
+        }
+    ],
+    "scopes": [
+        "vso.build_execute",
+        "vso.release_execute",
+        "vso.test_write"
+    ],
+    "categories": [
+        "Build and release"
+    ],
+    "content": {
+        "details": {
+            "path": "readme.md"
+        },
+        "license": {
+            "path": "eula.md"
+        }
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/ricardoserradas/VSTSRunWebTests/blob/master/getstarted.md"
+        },
+        "support": {
+            "url": "https://github.com/ricardoserradas/VSTSRunWebTests/blob/master/support.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/ricardoserradas/VSTSRunWebTests"
+    },
+    "contributions": [
+        {
+            "id": "RunWebTestTask",
+            "type": "ms.vss-distributed-task.task",
+            "description": "A Build/Release task to run Web Tests.",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "RunWebTestTask"
+            }
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "$schema": "https://raw.githubusercontent.com/AArnott/vso-agent-tasks/9b41d803a/tasks.schema.json",
+    "id": "ac208d97-c534-45f4-bde4-5c04d216812d",
+    "name": "RunWebTests",
+    "friendlyName": "Run Web Tests",
+    "description": "Run Web Tests as part of your build/release process to test your software.",
+    "helpMarkDown": "[More information]https://github.com/ricardoserradas/VSTSRunWebTests/blob/master/getstarted.md",
+    "category": "Test",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "author": "Ricardo Serradas (MSFT)",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "demands": [
+        "VisualStudio_IDE"
+    ],
+    "minimumAgentVersion": "1.95.3",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "webtestlocation",
+            "type": "filePath",
+            "label": "Web Tests Location",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Path of the folder containing the Web Test files (.webtest) to run."
+        },
+        {
+            "name": "resultslocation",
+            "type": "string",
+            "label": "Results Location",
+            "defaultValue": "$(Build.ArtifactStagingDirectory)/WebTestResults",
+            "required": true,
+            "helpMarkDown": "Path to where you want the test results to be dropped."
+        },
+        {
+            "name": "testsettingslocation",
+            "type": "filePath",
+            "label": "Test Settings Location",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "If used, the path to the Test Settings file (.testsettings)."
+        },
+        {
+            "name": "publistestresults",
+            "type": "boolean",
+            "label": "Publish Test Results",
+            "defaultValue": false,
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "Check if you want the test results to be published as part of the build summary."
+
+        }
+    ],
+    "instanceNameFormat": "Run Web Tests",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\RunWebTests.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}
