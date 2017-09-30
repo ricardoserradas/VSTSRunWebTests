@@ -23,7 +23,7 @@
         "Build and release"
     ],
     "icons": {
-        "default": "images/icon-128.png"
+        "default": "images/icon.png"
     },
     "content": {
         "details": {
