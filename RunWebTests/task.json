@@ -14,7 +14,7 @@
     "version": {
         "Major": 0,
         "Minor": 1,
-        "Patch": 0
+        "Patch": 3
     },
     "demands": [
         "VisualStudio_IDE"
@@ -42,7 +42,7 @@
             "label": "Results Location",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Path to where you want the test results to be dropped. e.g. $(Build.ArtifactStagingDirectory)/WebTestResults"
+            "helpMarkDown": "Path to where you want the test results to be dropped. e.g. $(Build.ArtifactStagingDirectory)/WebTestResults/Results.trx"
         },
         {
             "name": "TestSettingsLocation",

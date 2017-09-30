@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "RS-VSTS-RunWebTests",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "name": "Run Web Tests",
     "publisher": "ricardoserradas",
     "description": "Run Web Tests stored in your source control.",

@@ -2,14 +2,16 @@ param(
     [string]$WebTestLocation,
     [string]$ResultsLocation,
     [string]$TestSettingsLocation,
-    [bool]$PublisTestResults,
-    [bool]$OverWriteTestResults
+    [string]$PublisTestResults,
+    [string]$OverWriteTestResults
 )
 
 # Checks if the folder of the path for the Test Results exists. If not, creates it.
 $testresultsfolder = Split-Path $ResultsLocation
+$PublisTestResultsBool = Convert-String $PublisTestResults Boolean
+$OverWriteTestResultsBool = Convert-String $OverWriteTestResults Boolean
 
-if ($PublisTestResults) {
+if ($PublisTestResultsBool) {
     Write-Warning "Publish Test Results set to true but feature still not implemented."
 }
 
@@ -19,7 +21,7 @@ if (-Not (Test-Path $testresultsfolder -PathType Container)) {
     New-Item $testresultsfolder -Type Directory
 }
 elseif (Test-Path $ResultsLocation) {
-    if ($OverWriteTestResults) {
+    if ($OverWriteTestResultsBool) {
         Write-Warning "The Test Results file $ResultsLocation already exists."
         Write-Warning "OverwriteTestResults set to true. Replacing it..."
         Remove-Item "$testresultsfolder\\*" -Recurse
