@@ -22,6 +22,9 @@
     "categories": [
         "Build and release"
     ],
+    "icons": {
+        "default": "images/icon-128.png"
+    },
     "content": {
         "details": {
             "path": "readme.md"

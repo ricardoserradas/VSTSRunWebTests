@@ -29,7 +29,7 @@
     ],
     "inputs": [
         {
-            "name": "webtestlocation",
+            "name": "WebTestLocation",
             "type": "filePath",
             "label": "Web Tests Location",
             "defaultValue": "",
@@ -37,7 +37,7 @@
             "helpMarkDown": "Path of the folder containing the Web Test files (.webtest) to run."
         },
         {
-            "name": "resultslocation",
+            "name": "ResultsLocation",
             "type": "string",
             "label": "Results Location",
             "defaultValue": "$(Build.ArtifactStagingDirectory)/WebTestResults",
@@ -45,7 +45,7 @@
             "helpMarkDown": "Path to where you want the test results to be dropped."
         },
         {
-            "name": "testsettingslocation",
+            "name": "TestSettingsLocation",
             "type": "filePath",
             "label": "Test Settings Location",
             "defaultValue": "",
@@ -53,7 +53,7 @@
             "helpMarkDown": "If used, the path to the Test Settings file (.testsettings)."
         },
         {
-            "name": "publistestresults",
+            "name": "PublisTestResults",
             "type": "boolean",
             "label": "Publish Test Results",
             "defaultValue": false,
@@ -61,6 +61,15 @@
             "groupName": "advanced",
             "helpMarkDown": "Check if you want the test results to be published as part of the build summary."
 
+        },
+        {
+            "name": "OverWriteTestResults",
+            "type": "boolean",
+            "label": "Overwrite Test Results",
+            "defaultValue": false,
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "If you're running a configuration that may create test results on an existing (and populated) folder, you should use this option."
         }
     ],
     "instanceNameFormat": "Run Web Tests",

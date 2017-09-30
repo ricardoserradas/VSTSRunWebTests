@@ -2,8 +2,8 @@ param(
     [string]$WebTestLocation,
     [string]$ResultsLocation,
     [string]$TestSettingsLocation,
-    [switch]$PublisTestResults,
-    [switch]$OverWriteTestResults
+    [bool]$PublisTestResults,
+    [bool]$OverWriteTestResults
 )
 
 # Checks if the folder of the path for the Test Results exists. If not, creates it.
