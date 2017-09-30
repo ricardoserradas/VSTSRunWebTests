@@ -4,7 +4,7 @@
     "name": "RunWebTests",
     "friendlyName": "Run Web Tests",
     "description": "Run Web Tests as part of your build/release process to test your software.",
-    "helpMarkDown": "[More information]https://github.com/ricardoserradas/VSTSRunWebTests/blob/master/getstarted.md",
+    "helpMarkDown": "[More information](https://github.com/ricardoserradas/VSTSRunWebTests/blob/master/getstarted.md)",
     "category": "Test",
     "visibility": [
         "Build",
@@ -40,9 +40,9 @@
             "name": "ResultsLocation",
             "type": "string",
             "label": "Results Location",
-            "defaultValue": "$(Build.ArtifactStagingDirectory)/WebTestResults",
+            "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Path to where you want the test results to be dropped."
+            "helpMarkDown": "Path to where you want the test results to be dropped. e.g. $(Build.ArtifactStagingDirectory)/WebTestResults"
         },
         {
             "name": "TestSettingsLocation",
